@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excel Merger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Merge Excel Files</h2>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="files" id="files" multiple accept=".xlsx" />
+    <button type="submit">Merge</button>
+  </form>
+  <a id="downloadLink" style="display:none;">Download Merged File</a>
+
+
+    <button id="resetBtn" style="display:none;">Start Over</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
