@@ -19,16 +19,14 @@ app.get('/api', (req, res) => {
   res.json({"msg": "Hello world"});
 });
 
-// app.listen(port, () => {
-//   console.log(`Listening on http://localhost:${port}`);
-// })
-
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 app.post("/merge", upload.array("files"), (req, res) => {
   try {
     const mergedData = [];
+    let headersAdded = false; //bool for adding filename checkbox
+    const addFilename = req.body.addFilename === "true"; // checkbox state
 
     req.files.forEach((file, index) => {
       // Read workbook directly from memory buffer
@@ -36,12 +34,34 @@ app.post("/merge", upload.array("files"), (req, res) => {
       const sheetName = workbook.SheetNames[0];
       const sheetData = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
 
-      // Keep headers from first file only
-      if (index === 0) {
-        mergedData.push(...sheetData);
-      } else {
-        mergedData.push(...sheetData.slice(1));
+      if (sheetData.length === 0) return; // skip empty sheets
+
+      
+      // Add headers only once
+      if (!headersAdded) {
+        if (addFilename) {
+          mergedData.push(["Source File", ...sheetData[0]]);
+        } else {
+          mergedData.push(sheetData[0]);
+        }
+        headersAdded = true;
       }
+
+      // Add rows
+      for (let r = 1; r < sheetData.length; r++) {
+        if (addFilename) {
+          mergedData.push([file.originalname, ...sheetData[r]]);
+        } else {
+          mergedData.push(sheetData[r]);
+        }
+      }
+
+      // // Keep headers from first file only
+      // if (index === 0) {
+      //   mergedData.push(...sheetData);
+      // } else {
+      //   mergedData.push(...sheetData.slice(1));
+      // }
     });
 
     // Create new workbook

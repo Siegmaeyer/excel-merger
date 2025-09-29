@@ -1,1 +1,176 @@
 /** Add styles here */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #0455a2;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+main, #fileList, #uploadForm, #files, #createdBy, #dropZone, #downloadLink, #progressContainer, #progressBar, #merge-btn {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 5px;
+}
+
+main, #uploadForm, #fileList, #dropZone{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main{
+  width:fit-content;
+  gap: 5px;
+  margin: 10px;
+  background-color: #1d66ab;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#dropZone {
+  width:fit-content;
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  
+}
+
+#dropZone.dragover {
+  background-color: #f0f8ff;
+  border-color: #4caf50;
+}
+
+/* input[type="file"] {
+  display: none; /* Hides the default file input
+} 
+*/
+
+/* .custom-file-upload-label, #merge-btn {
+  display: inline-block; /* Makes the label behave like a button
+  background-color: #ff581f;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  /* Add other styling as desired
+} */
+
+#fileNameDisplay {
+  margin-left: 10px;
+  font-style: italic;
+  color: #555;
+}
+
+/* 
+input[type="file"] {
+  border-radius: 10px;
+  height: 50px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: red;
+} */
+
+/* .custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.custom-file-upload button{
+  background-color: #ff581f;
+} */
+
+#fileList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 14px;
+}
+  
+#fileList li {
+  overflow: hidden;
+  width: 80%;
+  background: #ff581f;
+  margin: 3px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#addFilename{
+  display: flex;
+  gap: 5px
+}
+
+
+
+#downloadLink {
+    color: #ff581f;
+}
+
+#progressContainer {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+  }
+  
+  #progressBar {
+    width: 0%;
+    height: 20px;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    transition: width 0.3s;
+  }
+
+  #createdBy{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    flex-direction: start;
+    right: 0;
+    bottom: 0;
+    gap: 5px;
+    margin: 5px;
+  }
+
+  #createdBy a {
+    color: #ff581f;
+  }
+/* 
+  #files{
+    color: red;
+  } */
+  
