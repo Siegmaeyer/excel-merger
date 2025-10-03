@@ -1,9 +1,9 @@
 TO ADD:
-- STYLING
-- LINK TO PORTFOLIO
-- ADD LOADING adnimation
-- Make UI look presentable with RLBE Theme
-- add dark and light mode
+[/]- STYLING
+[/]- LINK TO PORTFOLIO
+[/]- ADD LOADING adnimation
+[/]- Make UI look presentable with RLBE Theme
+
 
 
 COMPLETED:

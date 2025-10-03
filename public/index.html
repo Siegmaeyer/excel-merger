@@ -20,7 +20,7 @@
 
       <div id="dropZone">
         
-        <i class="bi bi-file-earmark-arrow-up-fill"></i>
+        <i id="upload-icon" class="bi bi-file-earmark-arrow-up-fill"></i>
        
         <p> Drag & Drop Excel files here<br>or <br>click below to select</p>
         <label for="files" class="custom-file-upload-label">Choose Files</label>
@@ -31,7 +31,7 @@
 
       <ul id="fileList"></ul>
 
-      <label id="addFilename">
+      <label id="add-filename">
         <input type="checkbox" id="addFilename" />
         <p>Add filename as first column</p>
       </label>
@@ -40,23 +40,28 @@
       <div id="progressContainer" style="display:none;">
         <div id="progressBar"></div>
       </div>
-      <button id="merge-btn" type="submit">Merge Files</button>
+      
+      <button id="merge-btn" type="submit">Merge</button>
 
      
     </form>
-     <button id="downloadLink" style="display:none;"> Download Merged File</button>
+    
+    <div id="result-btn">
+      <a id="downloadLink" style="display:none;"> Download Merged File</a>
 
-  
 
-    <button id="resetBtn" style="display:none;"><span class="material-symbols-outlined">
-      refresh
-      </span>Start Over</button>
+      <button id="resetBtn" style="display:none;">
+        <span class="material-symbols-outlined">
+        refresh
+        </span>
+        <p>Start Over</p>
+      </button>
+    </div>
 
   </main>
 
-  <h4>Created by </h4> <a href="_BLANK">Benjamin Perez</a>
   <div id="createdBy">
-  
+    <h4>Created by </h4> <a href="_BLANK">Benjamin Perez</a>
   </div>
  
 

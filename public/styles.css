@@ -14,7 +14,7 @@ body{
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #0455a2;
+    background-color: #111827; /*Back drop*/
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -36,16 +36,21 @@ main, #uploadForm, #fileList, #dropZone{
 }
 
 main{
-  width:fit-content;
+  width: fit-content;
   gap: 5px;
   margin: 10px;
-  background-color: #1d66ab;
+  background-color: #1f2937; /* main div bg */
   padding: 20px;
   border-radius: 10px;
 }
 
+#upload-icon{
+  color:#ff581f;
+  font-size: 50px;
+}
+
 #dropZone {
-  width:fit-content;
+  width: 50vw;
   border: 2px dashed #aaa;
   border-radius: 10px;
   padding: 30px;
@@ -53,7 +58,7 @@ main{
   margin-bottom: 10px;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
-  
+  gap:10px;
 }
 
 #dropZone.dragover {
@@ -61,21 +66,20 @@ main{
   border-color: #4caf50;
 }
 
-/* input[type="file"] {
-  display: none; /* Hides the default file input
+ input[type="file"] {
+  display: none; /* Hides the default file input */
 } 
-*/
 
-/* .custom-file-upload-label, #merge-btn {
-  display: inline-block; /* Makes the label behave like a button
+.custom-file-upload-label, #merge-btn, #downloadLink, #resetBtn {
+  display: inline-block; /* Makes the label behave like a button*/
   background-color: #ff581f;
   color: white;
   padding: 8px 15px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  /* Add other styling as desired
-} */
+  /* Add other styling as desired*/
+}
 
 #fileNameDisplay {
   margin-left: 10px;
@@ -83,32 +87,8 @@ main{
   color: #555;
 }
 
-/* 
-input[type="file"] {
-  border-radius: 10px;
-  height: 50px;
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-input[type="file"]::file-selector-button {
-  background-color: red;
-} */
-
-/* .custom-file-upload {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-.custom-file-upload button{
-  background-color: #ff581f;
-} */
-
 #fileList {
+  width: fit-content;
   list-style-type: none;
   padding: 0;
   margin-top: 10px;
@@ -116,61 +96,83 @@ input[type="file"]::file-selector-button {
 }
   
 #fileList li {
+  width: 50vw;
   overflow: hidden;
-  width: 80%;
-  background: #ff581f;
+  background: #111827;
   margin: 3px 0;
   padding: 6px 10px;
   border-radius: 6px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#addFilename{
+#add-filename{
   display: flex;
   gap: 5px
 }
 
-
-
-#downloadLink {
-    color: #ff581f;
+input[type="checkbox"]:checked {
+  accent-color: #ff581f;
 }
 
 #progressContainer {
-    width: 100%;
-    background-color: #eee;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 15px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#merge-btn{
+  font-size: 15px;
+}
+
+#progressBar {
+  border-radius: 10px;
+  width: 0%;
+  height: 20px;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  transition: width 0.3s;
+}
+
+#result-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: start;
+  border-radius: 10px;
+  gap: 10px;
+
+}
+
+
+#downloadLink {
+  background-color: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 10px;
+}
+
+
+#resetBtn{
+  background-color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: start;
+  padding: 0px 10px;
+}
+
+#createdBy{
+  display: flex;
+  justify-content: end;
+  align-items: baseline;
+  flex-direction: start;
+  gap: 5px;
+  margin: 5px;
   }
   
-  #progressBar {
-    width: 0%;
-    height: 20px;
-    background-color: #4caf50;
-    text-align: center;
-    line-height: 20px;
-    color: white;
-    transition: width 0.3s;
-  }
-
-  #createdBy{
-    position: absolute;
-    display: flex;
-    justify-content: end;
-    align-items: baseline;
-    flex-direction: start;
-    right: 0;
-    bottom: 0;
-    gap: 5px;
-    margin: 5px;
-  }
-
   #createdBy a {
     color: #ff581f;
   }
-/* 
-  #files{
-    color: red;
-  } */
+
   

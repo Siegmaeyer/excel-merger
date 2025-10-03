@@ -123,7 +123,7 @@ uploadForm.addEventListener("submit", async (e) => {
         downloadLink.style.display = "block";
         downloadLink.textContent = "Download Merged File";
 
-        resetBtn.style.display = "block"; // show reset button
+        resetBtn.style.display = "flex"; // show reset button
 
       }, 300); // half a second delay looks smooth
 
