@@ -36,23 +36,33 @@ app.post("/merge", upload.array("files"), (req, res) => {
 
       if (sheetData.length === 0) return; // skip empty sheets
 
-      
+       // 👇 Remove top rows (4 for first file, 5 for the rest)
+       let rowsToRemove = index === 0 ? 4 : 5;
+       let trimmedData = sheetData.slice(rowsToRemove);
+ 
+       // 👇 Remove empty rows (rows that are entirely blank)
+       trimmedData = trimmedData.filter(
+         (row) => row.some((cell) => cell !== null && cell !== undefined && cell !== "")
+       );
+
+      if (trimmedData.length === 0) return;
+
       // Add headers only once
       if (!headersAdded) {
         if (addFilename) {
-          mergedData.push(["Source File", ...sheetData[0]]);
+          mergedData.push(["Source File", ...trimmedData[0]]);
         } else {
-          mergedData.push(sheetData[0]);
+          mergedData.push(trimmedData[0]);
         }
         headersAdded = true;
       }
 
       // Add rows
-      for (let r = 1; r < sheetData.length; r++) {
+      for (let r = 1; r < trimmedData.length; r++) {
         if (addFilename) {
-          mergedData.push([file.originalname, ...sheetData[r]]);
+          mergedData.push([file.originalname, ...trimmedData[r]]);
         } else {
-          mergedData.push(sheetData[r]);
+          mergedData.push(trimmedData[r]);
         }
       }
 

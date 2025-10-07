@@ -1,9 +1,10 @@
 TO ADD:
-[/]- STYLING
-[/]- LINK TO PORTFOLIO
-[/]- ADD LOADING adnimation
-[/]- Make UI look presentable with RLBE Theme
-
-
-
-COMPLETED:
+[/] - STYLING
+[/] - LINK TO PORTFOLIO
+[/] - ADD LOADING adnimation
+[/] - Make UI look presentable with RLBE Theme
+[ ] - Know the limit of the app and make it work still
+[ ] - If the limit is 30 files, make it so that it can detect it  
+[ ] - Make errors more user friendly to understand
+[ ] - add remove rows 4 or 5
+[ ] - 
