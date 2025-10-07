@@ -37,7 +37,7 @@ app.post("/merge", upload.array("files"), (req, res) => {
       if (sheetData.length === 0) return; // skip empty sheets
 
        // 👇 Remove top rows (4 for first file, 5 for the rest)
-       let rowsToRemove = index === 0 ? 4 : 5;
+       let rowsToRemove = index === 0 ? 3 : 4; //changed from first and fifth row due to missing data
        let trimmedData = sheetData.slice(rowsToRemove);
  
        // 👇 Remove empty rows (rows that are entirely blank)
